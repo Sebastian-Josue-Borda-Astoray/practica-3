@@ -1,43 +1,38 @@
-﻿@model practica.Models.PostDetailViewModel
+﻿<div style="max-width: 800px; margin: 0 auto; padding: 30px; font-family: Arial, sans-serif; background-color: #fdfdfd; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+    <h2 style="color: #2c3e50; font-size: 2rem; font-weight: bold; margin-bottom: 20px;">@Model.Post.Title</h2>
+    <p style="font-size: 1.1em; color: #555; line-height: 1.6; margin-bottom: 30px;">@Model.Post.Body</p>
 
-<div style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif;">
-    <h2 style="color: #2c3e50;">@Model.Post.Title</h2>
-    <p style="font-size: 1.1em; color: #555;">@Model.Post.Body</p>
-
-    <hr />
-
-    <h3 style="color: #34495e;">Autor</h3>
+    <h3 style="color: #34495e; font-size: 1.4rem; margin-bottom: 10px;">Autor</h3>
     @if (Model.User != null)
     {
-        <div style="padding-left: 10px;">
-            <p><strong>Nombre:</strong> @Model.User.Name</p>
-            <p><strong>Email:</strong> @Model.User.Email</p>
-            <p><strong>Username:</strong> @Model.User.Username</p>
+        <div style="padding-left: 10px; background-color: #f4f6f8; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+            <p style="margin: 4px 0;"><strong>Nombre:</strong> @Model.User.Name</p>
+            <p style="margin: 4px 0;"><strong>Email:</strong> @Model.User.Email</p>
+            <p style="margin: 4px 0;"><strong>Username:</strong> @Model.User.Username</p>
         </div>
     }
     else
     {
-        <p style="color: #c0392b;">No se encontró el usuario.</p>
+        <p style="color: #c0392b; font-weight: bold;">No se encontró el usuario.</p>
     }
 
     <div style="display: flex; gap: 10px; margin-top: 20px;">
-        <button style="padding: 10px 20px; background-color: #2ecc71; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        <button style="padding: 10px 20px; background-color: #2ecc71; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
             👍 Me gustó
         </button>
-        <button style="padding: 10px 20px; background-color: #e74c3c; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        <button style="padding: 10px 20px; background-color: #e74c3c; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
             👎 No me gustó
         </button>
     </div>
-    <hr />
 
-    <h3 style="color: #34495e;">Comentarios</h3>
+    <h3 style="color: #34495e; font-size: 1.4rem; margin-top: 40px; margin-bottom: 15px;">Comentarios</h3>
     @if (Model.Comments.Count > 0)
     {
-        <ul style="list-style: none; padding: 0;">
+        <ul style="list-style: none; padding: 0; background-color: #f9f9f9; border-radius: 8px; padding: 15px;">
             @foreach (var comment in Model.Comments)
             {
                 <li style="border-bottom: 1px solid #ddd; padding: 10px 0;">
-                    <strong>@comment.Name</strong> <em>(@comment.Email)</em><br />
+                    <strong style="color: #2c3e50;">@comment.Name</strong> <em style="color: #7f8c8d;">(@comment.Email)</em><br />
                     <span style="color: #555;">@comment.Body</span>
                 </li>
             }
@@ -45,8 +40,8 @@
     }
     else
     {
-        <p>No hay comentarios para este post.</p>
+        <p style="color: #7f8c8d;">No hay comentarios para este post.</p>
     }
 
-    <hr />
+    <hr style="margin-top: 40px;" />
 </div>
