@@ -1,42 +1,5 @@
-﻿<style>
-    .container {
-        max-width: 800px;
-        background-color: #f8f9fa;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h3 {
-        font-weight: bold;
-        margin-bottom: 25px;
-        color: #343a40;
-    }
-
-    .list-group-item {
-        transition: background-color 0.2s ease, transform 0.2s ease;
-        border: none;
-        border-bottom: 1px solid #dee2e6;
-    }
-
-    .list-group-item:hover {
-        background-color: #e9ecef;
-        transform: scale(1.01);
-    }
-
-    .list-group-item a {
-        color: #007bff;
-        font-weight: 500;
-    }
-
-    .list-group-item a:hover {
-        text-decoration: underline;
-        color: #0056b3;
-    }
-</style>
-
-<div class="container mt-4">
-    <h3>Lista de Noticias</h3>
+﻿<div class="container mt-4">
+    <h3>Lista de Publicaciones</h3>
     <ul class="list-group">
         @foreach (var post in Model)
         {
